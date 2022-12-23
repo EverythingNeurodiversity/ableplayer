@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Huberman Heat Podcast 69</title>
+<link rel="stylesheet" href="demos.css" type="text/css">
 
+<!-- Dependencies -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+
+<!-- Able Player CSS -->
+<link rel="stylesheet" href="../build/ableplayer.min.css" type="text/css"/>
+
+<!-- Able Player JavaScript -->
+<script src="../build/ableplayer.js"></script>
+
+<!-- styles for this example page -->
+<style>
+	main { 
+		display: flex; 
+		flex-direction: row; 
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		width: 1130px;
+		max-width: 96%;
+		margin: 2% 2% 5em;
+	}
+	section#intro { 
+		width: 100%;
+		margin-bottom: 2%;	
+	}
+	div#col1 { 
+		width: 220px;
+		max-width: 20%;
+		background-color: #e8ddf0;
+		border: 1px solid #340449;
+		margin-right: 1em;
+	}
+	div#col2 { 
+		width: 860px; 
+		max-width: 70%;
+	}
+	div#col2 div.able-wrapper { 
+		margin-top: 0;
+	}
+	section#intro p, 
+	section#intro ul {		
+		width: 80em; 	
+		max-width: 95%;	
+	}
+	section#intro a { 
+		color: #512a69;
+	}
+	section#speakers { 
+	}
+	section#player, 
+	section#transcript-wrapper { 
+		width: 640px;
+		max-width: 100%;
+	}
+	section#speakers h2 {
+		margin: 1em 0.25em 0;
+		text-align: center;
+	}
+	section#speakers p {
+		margin: 0.5em 0;
+		padding: 0 0.5em;
+		text-align: center;
+	}
+	#chapters nav li { 
+		border: 3px solid transparent; 
+	}
+	#chapters nav li:hover { 
+		border: 3px solid #C00;
+	}
+	#chapters nav li:hover button { 
+		color: black !important;
+	}
+	#chapters nav li:hover button[aria-current="true"], 
+	#chapters nav li.able-focus button { 
+		color: white !important;
+	}	
+}
+
+</style>
+</head>
+
+<body>
+
+	<main>
+
+
+		<div class="column" id="col1">
+			<section id="speakers" aria-labelledby="speakers-heading">
+				<h2 id="speakers-heading">Speakers</h2>	
+				<p>Click the description of a chapter to jump to the section 
+					of the video.
+				</p>
+				<div id="chapters"></div>
+			</section>
+		</div>
+
+		<div class="column" id="col2">
+			<section id="player" aria-label="Video player">
+				<video data-able-player
+					data-skin="2020"
+					id="video1"
+					preload="auto"
+					data-youtube-id="rMa-sLvHRpI"
+					data-transcript-div="transcript"
+					data-transcript-title=""
+					data-chapters-div="chapters"
+					data-chapters-title="" 
+					data-use-chapters-button="false"
+					data-include-transcript="false"
+					playsinline
+				>
+					<track kind="captions" src="../media/hubermanheat_captions_en.vtt" srclang="en" label="English"/>
+
+					<track kind="chapters" src="../media/huberman_heat_69_chapters.vtt" srclang="en" label="Chapters"/>
+				</video>
+			</section>
+
+			<section id="transcript-wrapper" aria-label="Transcript">
+				<div id="transcript"></div>
+			</section>
+		</div>
+	
+	</main>
+</body>
+</html>
